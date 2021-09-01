@@ -8,6 +8,7 @@ const app = express()
 // Import Local Depandencies
 const mongoConnect = require("./config/mongoDB")
 const generalUserRoutes = require("./routes/generalUserRoutes")
+// const enterProducts = require("./temp/enterProducts")
 
 // Middlewares for express
 app.use(express.json())
@@ -24,7 +25,7 @@ mongoConnect()
 app.use("/authentication/", generalUserRoutes)
 
 // Temporary Routes
-
+// enterProducts()
 
 // Running the server on PORT
 const port = process.env.PORT
