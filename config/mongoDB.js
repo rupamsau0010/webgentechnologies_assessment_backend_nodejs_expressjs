@@ -2,7 +2,6 @@
 const mongoose = require("mongoose");
 
 // Getting the MongoDB atlas URI from the .env
-
 URI = process.env.MONGO_URI;
 
 // Connecting with mongoDB atlas cloud database
