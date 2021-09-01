@@ -29,8 +29,8 @@ generalUserSchema.pre("save", async function (next) {
 });
 
 // Static Method to login the user...
-generalUserSchema.statics.login = async function (userNameOremail, password) {
-  const generalUser = await this.findOne({ email: userNameOremail });
+generalUserSchema.statics.login = async function (email, password) {
+  const generalUser = await this.findOne({ email: email });
   if (generalUser) {
     const auth = await bcrypt.compare(password, generalUser.password);
     if (auth) {
@@ -39,7 +39,7 @@ generalUserSchema.statics.login = async function (userNameOremail, password) {
       throw Error("Incorrect Password");
     }
   } else {
-    const generalUser = await this.findOne({ userName: userNameOremail });
+    const generalUser = await this.findOne({ email: email });
     if (generalUser) {
       const auth = await bcrypt.compare(password, generalUser.password);
       if (auth) {
