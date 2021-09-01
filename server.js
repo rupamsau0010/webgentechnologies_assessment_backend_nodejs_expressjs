@@ -5,14 +5,14 @@ const express = require("express")
 const app = express()
 
 // Import Local Depandencies
-
+const mongoConnect = require("./config/mongoDB")
 
 // Middlewares for express
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 // Connect to Prior Database(MongoDB)
-
+mongoConnect()
 
 // Routes
 // Main Routes
