@@ -4,6 +4,7 @@ const router = Router()
 
 // Import local depandencies
 const productControllers = require("../controllers/productControllers")
+const { requireAuth } = require("../middlewares/authMiddlewares")
 
 // Get All Products Route
 router.get("/getallproducts", productControllers.getAllProducts_get)
