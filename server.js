@@ -27,6 +27,10 @@ app.use("/authentication/", generalUserRoutes)
 // Temporary Routes
 // enterProducts()
 
+app.get("/", (req, res) => {
+    res.json({"data": "Hello World"})
+})
+
 // Running the server on PORT
 const port = process.env.PORT
 app.listen(port || 5000, () => {
