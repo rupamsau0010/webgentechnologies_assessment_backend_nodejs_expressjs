@@ -8,6 +8,7 @@ const app = express()
 // Import Local Depandencies
 const mongoConnect = require("./config/mongoDB")
 const generalUserRoutes = require("./routes/generalUserRoutes")
+const productRoutes = require("./routes/productsRoutes")
 // const enterProducts = require("./temp/enterProducts")
 
 // Middlewares for express
@@ -23,6 +24,7 @@ mongoConnect()
 // Routes
 // Main Routes
 app.use("/authentication/", generalUserRoutes)
+app.use("/products", productRoutes)
 
 // Temporary Routes
 // enterProducts()
