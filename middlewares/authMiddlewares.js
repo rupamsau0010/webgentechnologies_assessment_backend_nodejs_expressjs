@@ -3,21 +3,17 @@ const jwt = require("jsonwebtoken");
 
 // Middleware for Protecting routes...
 const requireAuth = (req, res, next) => {
-    const token = req.cookies.jwt;
-    
-    // Check JWT exist or not...
-    if(token) {
-        jwt.verify(token, process.env.JWT_SECRET, (err, docodeToken) => {
-            if(err) {
-                console.log(err.message);
-                //res.redirect("/login");
-            } else {
-                console.log(docodeToken);
-                next();
-            }
-        });
-    } else {
-        //res.redirect("/login");
+    try {
+        const token = req.cookies.jwt;
+        const decodeToken = jwt.verify(token, process.env.JWT_SECRET)
+        req.userData = decodeToken
+        console.log(decodeToken);
+        next()
+    } catch (error) {
+        return res.json({
+            status: "invalid",
+            payload: "You are not authorized to post a product. Please consider login/signup"
+        })
     }
 }
 

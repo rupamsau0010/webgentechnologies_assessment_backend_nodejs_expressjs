@@ -40,7 +40,7 @@ module.exports.enterNewProducts_post = async(req, res) => {
             })
         } else {
             res.json({
-                status: "succuess",
+                status: "success",
                 payload: data1
             })
         }
