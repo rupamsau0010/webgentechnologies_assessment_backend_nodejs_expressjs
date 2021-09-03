@@ -10,7 +10,7 @@ const { requireAuth } = require("../middlewares/authMiddlewares")
 router.get("/getallproducts", productControllers.getAllProducts_get)
 
 // Create a New Product
-router.post("/enterproduct", productControllers.enterNewProducts_post)
+router.post("/enterproduct", requireAuth, productControllers.enterNewProducts_post)
 
 // Search a product
 router.post("/searchproduct", productControllers.searchProduct_post)
