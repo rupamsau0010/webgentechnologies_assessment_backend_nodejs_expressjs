@@ -13,7 +13,7 @@ router.get("/getallproducts", productControllers.getAllProducts_get)
 router.post("/enterproduct", productControllers.enterNewProducts_post)
 
 // Search a product
-router.get("/searchproduct", productControllers.searchProduct_get)
+router.post("/searchproduct", productControllers.searchProduct_post)
 
 // Export the Module
 module.exports = router

@@ -48,7 +48,7 @@ module.exports.enterNewProducts_post = async(req, res) => {
 }
 
 // Search a Product
-module.exports.searchProduct_get = async(req, res) => {
+module.exports.searchProduct_post = async(req, res) => {
     // Get the Search Data
     const searchGiven = req.body.searchGiven
     
