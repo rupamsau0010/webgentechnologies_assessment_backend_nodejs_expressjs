@@ -12,7 +12,7 @@ router.post('/signup', generalUserControllers.signup_post)
 router.post('/login', generalUserControllers.login_post)
 
 // Logout Route
-router.get("/logout", generalUserControllers.logout_post)
+router.post("/logout", generalUserControllers.logout_post)
 
 // Export the module
 module.exports = router
