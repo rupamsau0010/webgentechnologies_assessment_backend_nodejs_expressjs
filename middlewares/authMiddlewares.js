@@ -10,14 +10,14 @@ const requireAuth = (req, res, next) => {
         jwt.verify(token, process.env.JWT_SECRET, (err, docodeToken) => {
             if(err) {
                 console.log(err.message);
-                res.redirect("/login");
+                //res.redirect("/login");
             } else {
                 console.log(docodeToken);
                 next();
             }
         });
     } else {
-        res.redirect("/login");
+        //res.redirect("/login");
     }
 }
 
