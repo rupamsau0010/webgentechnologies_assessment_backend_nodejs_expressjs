@@ -93,7 +93,7 @@ module.exports.login_post = async (req, res) => {
 
 // Logout Users
 // Post request controller for logout...
-module.exports.logout_get = (req, res) => {
+module.exports.logout_post = (req, res) => {
     res.cookie("jwt", "", { maxAge: 1 });  // Creating a JWT token for 1 ms and expireing it immidiately...
     res.redirect("/");
 }
