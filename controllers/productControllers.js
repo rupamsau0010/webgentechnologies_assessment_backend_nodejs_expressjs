@@ -70,8 +70,10 @@ module.exports.searchProduct_post = async(req, res) => {
 
     const finalProductArray = productArray.filter(element => element.value >= 0.3)
 
+    ff = finalProductArray.map(i => i.data);
+
     res.json({
         status: "success",
-        payload: finalProductArray
+        payload: ff
     })
 }
