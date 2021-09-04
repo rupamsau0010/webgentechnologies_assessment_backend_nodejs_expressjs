@@ -11,6 +11,7 @@ const mongoConnect = require("./config/mongoDB")
 const generalUserRoutes = require("./routes/generalUserRoutes")
 const productRoutes = require("./routes/productsRoutes")
 // const enterProducts = require("./temp/enterProducts")
+// const updateProduct = require("./temp/updateProducts")
 
 // Middlewares for express
 app.use(express.json())
@@ -35,6 +36,8 @@ app.use("/products", productRoutes)
 
 // Temporary Routes
 // enterProducts()
+// updateProduct()
+
 app.get("/", (req, res) => {
     res.json({"data": "Hello World"})
 })
