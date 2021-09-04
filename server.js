@@ -20,7 +20,9 @@ app.use(express.urlencoded({extended: true}))
 app.use(cookieParser());
 
 // Cors Access control middlewares
-app.use(cors());
+app.use(cors({
+    origin: ['http://localhost:3000', 'https://rupamsau0010.github.io']
+}));
 
 // Connect to Prior Database(MongoDB)
 mongoConnect()
