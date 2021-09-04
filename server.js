@@ -3,6 +3,7 @@ require("dotenv").config()
 
 const express = require("express")
 const cookieParser = require("cookie-parser")
+const cors = require("cors")
 const app = express()
 
 // Import Local Depandencies
@@ -18,6 +19,11 @@ app.use(express.urlencoded({extended: true}))
 // Middlewares for cookie-parser
 app.use(cookieParser());
 
+// Cors Access control middlewares
+app.use(cors({
+    origin: ['https://rupamsau0010.github.io/', 'http://localhost:3000']
+}));
+
 // Connect to Prior Database(MongoDB)
 mongoConnect()
 
@@ -26,12 +32,6 @@ mongoConnect()
 app.use("/authentication/", generalUserRoutes)
 app.use("/products", productRoutes)
 
-// Middlewares for external server Request process
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://rupamsau0010.github.io"); // update to match the domain you will make the request from
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
 // Temporary Routes
 // enterProducts()
