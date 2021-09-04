@@ -69,8 +69,8 @@ module.exports.updateProduct_post = async(req, res) => {
         })
         } else {
             res.json({
-                status: "failure",
-                payload: "You are not authorized to Update this Product"
+                status: "invalid",
+                payload: "You are not authorized to Update this Product as you have not created it."
             })
         }
     })
@@ -99,8 +99,8 @@ module.exports.deleteProduct_post = async(req, res) => {
                 })
             } else {
                 res.json({
-                    status: "failure",
-                    payload: "You are not authorized to Update this Product as You have not created it"
+                    status: "invalid",
+                    payload: "You are not authorized to delete this Product as You have not created it."
                 })
             }
         }
