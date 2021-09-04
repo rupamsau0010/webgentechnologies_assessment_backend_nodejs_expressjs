@@ -20,16 +20,14 @@ app.use(express.urlencoded({extended: true}))
 app.use(cookieParser());
 
 // Cors Access control middlewares
-app.use(cors({
-    origin: ['https://rupamsau0010.github.io', 'http://localhost:3000']
-}));
+app.use(cors());
 
 // Connect to Prior Database(MongoDB)
 mongoConnect()
 
 // Routes
 // Main Routes
-app.use("/authentication/", generalUserRoutes)
+app.use("/authentication", generalUserRoutes)
 app.use("/products", productRoutes)
 
 
