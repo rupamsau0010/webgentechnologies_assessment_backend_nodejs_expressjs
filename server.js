@@ -21,7 +21,7 @@ app.use(cookieParser());
 
 // Cors Access control middlewares
 app.use(cors({
-    origin: ['https://rupamsau0010.github.io/', 'http://localhost:3000']
+    origin: ['https://rupamsau0010.github.io', 'http://localhost:3000']
 }));
 
 // Connect to Prior Database(MongoDB)
