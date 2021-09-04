@@ -13,7 +13,7 @@ const requireAuth = (req, res, next) => {
         // console.log(error);
         return res.json({
             status: "invalid",
-            payload: "You are not authorized to post a product. Please consider login/signup"
+            payload: "You are not authorized to Create, Update or Delete a product. Please consider login/signup"
         })
     }
 }
