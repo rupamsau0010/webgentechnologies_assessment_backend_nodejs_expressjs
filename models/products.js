@@ -28,8 +28,8 @@ const productSchema = new mongoose.Schema({
         type: String,
     },
     productUpdatedAt: {
-        type: Data
-    }
+        type: Date
+    },
     productCreatedAt: {
         type: Date,
         default: new Date()
