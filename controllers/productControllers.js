@@ -29,7 +29,8 @@ module.exports.enterNewProducts_post = async(req, res) => {
         companyName: req.body.companyName,
         productTitle: req.body.productTitle,
         productPrice: req.body.productPrice,
-        productImgUrl: req.body.productImgUrl
+        productImgUrl: req.body.productImgUrl,
+        productCreatedBy: req.body.productCreatedBy
     })
 
     product.save((err1, data1) => {
